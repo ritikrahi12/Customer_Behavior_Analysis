@@ -29,7 +29,7 @@ where subscription_status in ('Yes', 'No')
 group by subscription_status
 
 -- Q6 Which 5 products have the highest percentage of purchases with discounts applied?
-select item_purchased, round(100 * sum(case when discount_applied='Yes' then 1 else 0 end)/ count(*),2) As Dicount_rate
+select item_purchased, round(100 * sum(case when discount_applied='Yes' then 1 else 0 end)/ count(*),2) As Discount_rate
 from customers
 group by item_purchased
 order by Dicount_rate desc
